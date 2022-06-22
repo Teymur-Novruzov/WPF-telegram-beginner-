@@ -1,0 +1,182 @@
+﻿<Window x:Class="WPF_telegram__beginner_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_telegram__beginner_"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid x:Name="main_grid">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="4.9*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="photo_grid" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" >
+                <Image Source="/images/3_line.jpg"></Image>
+            </Label>
+
+            <Label Name="image_john" Grid.Row="1">
+                <Image Source="/images/I-1.jpg"></Image>
+            </Label>
+            
+            <Label Name="image_mia" Grid.Row="2">
+                <Image Source="/images/mia.jpg"></Image>
+            </Label>
+            
+            <Label Name="image_Ali" Grid.Row="3">
+                <Image Source="/images/flower.jpg"></Image>
+            </Label>
+
+        </Grid>
+
+        <Grid x:Name="left_grid" Grid.Column="1">
+
+            <TextBox x:Name="search_txb" Grid.Row="0" Grid.Column="1" FontSize="20" Text="Search" Background="LightGray"
+                     Width="250" Height="30" MouseEnter="TextBox_MouseEnter" MouseLeave="TextBox_MouseLeave" Margin="0,0,40,0"  ></TextBox>
+
+            <Button Grid.Row="0"  Grid.Column="0" Panel.ZIndex="4" HorizontalAlignment="Right" Width="34"  Height="37" Margin="0,0,5,0"  
+                    Background="Transparent" Click="Button_Click_search">
+                <Image Source="/images/sent_btn.png" Width="25" Height="27" HorizontalAlignment="Center"  ></Image>
+            </Button>
+
+            <Button x:Name="john_lbl" Grid.Row="1" Content="JOHN" FontSize="25" BorderThickness="2" BorderBrush="Black" Background="White"
+                    VerticalAlignment="Stretch" Width="300" HorizontalContentAlignment="Left" Click="john_lbl_Click"></Button>
+            <Button x:Name="mia_lbl" Grid.Row="2" Content="Mia" FontSize="25"  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left"
+                    VerticalAlignment="Stretch" Width="300" HorizontalContentAlignment="Left" Background="White"
+                    Click="mia_lbl_Click_mia"></Button>
+            <Button x:Name="Ali_lbl" Grid.Row="3" Content="Ali" FontSize="25"  BorderThickness="2" BorderBrush="Black"
+                     VerticalAlignment="Stretch" Width="300" HorizontalContentAlignment="Left" Background="White"
+                     Click="Ali_lbl_Click"></Button>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <!--<Button Grid.Column="0" Grid.Row="8" Height="25" Width="30" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Image Source="/images/I.jpg">
+
+                </Image>
+
+            </Button>-->
+            <!--<Label Grid.Row="5" Grid.Column="0" >
+
+
+                
+                
+            </Label>-->
+
+        </Grid>
+
+        <Grid x:Name="right_grid" Grid.Column="2">
+
+
+            <Label Grid.Row="9"  Grid.Column="0" Panel.ZIndex="4" HorizontalAlignment="Left" Width="34"  Height="37" >
+                <Image Source="/images/pinc.png" Width="25" Height="27" HorizontalAlignment="Center" ></Image>
+            </Label>
+
+            <Label Grid.Row="9"  Grid.Column="0" Panel.ZIndex="4" HorizontalAlignment="Right" Width="34"  Height="37" >
+                <Image Source="/images/mic.png" Width="25" Height="27" HorizontalAlignment="Center" ></Image>
+            </Label>
+
+            <Label Grid.Row="9"  Grid.Column="0" Panel.ZIndex="4" HorizontalAlignment="Right" Width="34"  Height="37" Margin="0,0,40,0" >
+                <Image Source="/images/stiker.png" Width="25" Height="27" HorizontalAlignment="Center"  ></Image>
+            </Label>
+
+            <Label Grid.Row="9" Background="White" Panel.ZIndex="3" Width="437">
+                <TextBox x:Name="message_text" Width="235" Height="30" 
+                          Text="Write a message ..." Foreground="Gray" FontSize="20" Margin="43,6,0,0" BorderThickness="0" 
+                         MouseEnter="message_text_MouseEnter" MouseLeave="message_text_MouseLeave"></TextBox>
+            </Label>
+
+            <Button Grid.Row="9"  Grid.Column="0" Panel.ZIndex="4" HorizontalAlignment="Right" Width="34"  Height="37" Margin="0,0,80,0"  
+                    Background="Transparent" Click="Button_Click_sent_btn">
+                <Image Source="/images/sent_btn.png" Width="25" Height="27" HorizontalAlignment="Center"  ></Image>
+            </Button>
+
+            <Label x:Name="Lbl_2" Content="" HorizontalAlignment="Left" 
+                   Grid.Row="7"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Lbl_3" Content="" HorizontalAlignment="Right" 
+                   Grid.Row="6"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Lbl_4" Content="" HorizontalAlignment="Left" 
+                   Grid.Row="5"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Lbl_5" Content="" HorizontalAlignment="Right" 
+                   Grid.Row="4"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Lbl_6" Content="" HorizontalAlignment="Left" 
+                   Grid.Row="3"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Lbl_7" Content="" HorizontalAlignment="Right" 
+                   Grid.Row="2"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Lbl_8" Content="" HorizontalAlignment="Left" 
+                   Grid.Row="1"  FontSize="19" Foreground="White" FontFamily="comic sans ms" Panel.ZIndex="1"></Label>
+
+            <Label x:Name="Name_friend" Panel.ZIndex="1" Background="White" Grid.Column="0" Grid.Row="0"
+                   FontSize="25" Content="">
+
+            </Label>
+
+            <Label Name="name_lbl_search" Grid.Row="0" Grid.Column="0" Panel.ZIndex="2" HorizontalAlignment="Right">
+                <Image Source="/images/download.png" Grid.RowSpan="9" Width="38"  Panel.ZIndex="2" ></Image>
+
+            </Label>
+
+            <Label Name="name_lbl_3_point" Grid.Row="0" Grid.Column="0" Panel.ZIndex="2" HorizontalAlignment="Right">
+                <Image Source="/images/3_point.png" Grid.RowSpan="9" Width="115"  Panel.ZIndex="2" ></Image>
+
+            </Label>
+
+            <Label x:Name="name_lbl" Content="" FontSize="30" Grid.Row="0" Grid.Column="0" Panel.ZIndex="2" ></Label>
+
+
+            <Image Source="/images/backgrount.jpg" Grid.RowSpan="9" Width="1000" HorizontalAlignment="Left" Panel.ZIndex="0"></Image>
+            <Image Source="/images/backgrount.jpg" Grid.RowSpan="9" Width="1000"  HorizontalAlignment="Right" Panel.ZIndex="0"></Image>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>
